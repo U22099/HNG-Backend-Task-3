@@ -155,6 +155,16 @@ app.get('/countries', async (req, res) => {
   }
 });
 
+app.get('/countries/image', async (_, res) => {
+  try {
+    const imagePath = path.join(__dirname, 'cache/summary.png');
+    await fs.access(imagePath);
+    return res.sendFile(imagePath);
+  } catch (error) {
+    return res.status(404).json({ error: 'Summary image not found' });
+  }
+});
+
 app.get('/countries/:name', async (req, res) => {
   try {
     const country = await Country.findOne({
@@ -200,16 +210,6 @@ app.get('/status', async (_, res) => {
     });
   } catch (error) {
     return res.status(500).json({ error: 'Internal server error' });
-  }
-});
-
-app.get('/countries/image', async (_, res) => {
-  try {
-    const imagePath = path.join(__dirname, 'cache/summary.png');
-    await fs.access(imagePath);
-    return res.sendFile(imagePath);
-  } catch (error) {
-    return res.status(404).json({ error: 'Summary image not found' });
   }
 });
 
