@@ -317,10 +317,9 @@ This project is licensed under the MIT License.
 
 ## Author Info
 
-**[Your Name Here]**
+**Daniel (U22099)**
 
-* 🌐 LinkedIn: [Your LinkedIn Profile]
-* 🐦 Twitter: [@YourTwitterHandle]
+* 🐦 Twitter: [@dan_22099]
 
 ---
 
